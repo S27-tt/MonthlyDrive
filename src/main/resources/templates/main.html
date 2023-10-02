@@ -1,0 +1,77 @@
+<form method="POST" action="#" th:action="@{${path}}" th:object="${form}">
+  <input type="hidden" th:field="*{id}" />
+  <section id="form">
+    <dl class="clearfix">
+      <dt><label th:for="${#ids.next('date')}" class="required">日付</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{date}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('time')}" class="required">時間</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{time}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('car')}" class="required">車名</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{car}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('driver')}" class="required">運転者</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{driver}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('purpose')}" class="required">用途</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{purpose}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('destination')}" class="required">目的地</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{destination}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('meter')}" class="required">メーター</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{meter}" /></div>
+      </dd>
+      <dt><label th:for="${#ids.next('privatefee')}" class="required">私用料金</label></dt>
+      <dd>
+        <div><input type="text" th:field="*{privatefee}" /></div>
+      </dd>
+    </dl>
+    <button type="submit">送信</button>
+  </section>
+</form>
+<section id="records">
+  <ul>
+    <li th:each="record : ${list}">
+      <article class="record">
+        <ul>
+          <li>
+            <h3 th:text="${record.date}" />
+          </li>
+          <li>
+            <h2 th:text="${record.time}" />
+          </li>
+          <li>
+            <h2 th:text="${record.car}" />
+          </li>
+          <li>
+            <h2 th:text="${record.driver}" />
+          </li>
+          <li>
+            <h2 th:text="${record.purpose}" />
+          </li>
+          <li>
+            <h2 th:text="${record.destination}" />
+          </li>
+          <li>
+            <h2 th:text="${record.meter}" />
+          </li>
+          <li>
+            <h2 th:text="${record.privatefee}" />
+          </li>
+          <li>
+            <div class="buttons clearfix"><a th:href="@{'edit?id={id}'(id=${record.id})}" class="edit">編集</a><a th:href="@{'delete?id={id}'(id=${record.id})}" class="delete">削除</a></div>
+          </li>
+        </ul>
+      </article>
+    </li>
+  </ul>
+</section>
