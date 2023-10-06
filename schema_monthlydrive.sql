@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS record;
 
 CREATE TABLE IF NOT EXISTS record (
     id varchar(255) NOT NULL,
-    date varchar(20) NULL,
+    date date NULL,
     time varchar(20) NULL,    
     car varchar(20) NULL,
     driver varchar(20) NULL,

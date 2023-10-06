@@ -21,7 +21,7 @@ public class Record {
 
 	/** 日付 */
 	@Column(length = 20, nullable = false)
-	private String date = null; 
+	private Date date = null; 
 	
 	/** 時間 */
 	@Column(length = 20, nullable = false)

@@ -1,5 +1,6 @@
 package com.example.monthlydrive.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +12,7 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
 
 	public Optional<Record> findById(String id);
 
+	
+	
+	List<Record> findByDeletedFalseOrderByDateAsc();
 }

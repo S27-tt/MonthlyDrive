@@ -29,7 +29,7 @@ public class DriveController {
 	}
 
 	private Model setList(Model model) {
-		Iterable<Record> list = repository.findAll();
+		Iterable<Record> list = repository.findByDeletedFalseOrderByDateAsc();
 		model.addAttribute("list", list);
 		return model;
 	}
@@ -43,7 +43,7 @@ public class DriveController {
         }
         model = this.setList(model);
         model.addAttribute("path", "create");
-        return "layout";
+        return "result";
     }
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
@@ -62,7 +62,18 @@ public class DriveController {
         model.addAttribute("form", RecordFactory.newRecord());
         model = setList(model);
         model.addAttribute("path", "create");
-        return "layout";
+        return "result";
     }
 
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@ModelAttribute("form") Record form, Model model) {
+        Optional<Record> record = repository.findById(form.getId());
+        repository.saveAndFlush(RecordFactory.deleteRecord(record.get()));
+        model.addAttribute("form", RecordFactory.newRecord());
+        model = setList(model);
+        model.addAttribute("path", "create");
+        return "result";
+    }
+	
+	
 }
