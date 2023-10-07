@@ -14,85 +14,130 @@
 </head>
 <body>
 
+	<p class="text-center">運転日報</p>
+	<div class="info-1 ms-5">
+		<table>
+			<tr>
+			<td valign="top">
+			<table class="table table-bordered text-nowrap table-sm">
+				<tr>
+					<th>車名</th>
+					<td></td>
+
+				</tr>
+
+				<tr>
+					<th>管理部署</th>
+					<td></td>
+
+				</tr>
+
+				<tr>
+					<th>区分</th>
+					<td></td>
+				</tr>
+
+			</table>
+			</td>
+			<td valign="top">
+			<table class="table table-bordered text-nowrap table-sm">
+				<tr>
+					<th>車両番号</th>
+					<td></td>
+
+				</tr>
+
+				<tr>
+					<th>氏名</th>
+					<td></td>
+
+				</tr>
+
+		
+			</table>
+			</td>
+			</tr>
+		</table>
+	</div>
 	<section id="records">
 
 
 		<article class="record">
 
-			<div class="table">
-				<table class="table table-bordered">
+			<div class="info-2 ms-5 me-5">
+				<table
+					class="table table-bordered text-nowrap table-striped table-sm">
 					<thead>
 						<tr>
 							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
-							<th scope="col">日付</th>
+							<th scope="col">曜日</th>
+							<th scope="col">運転者</th>
+							<th scope="col">用途</th>
+							<th scope="col">目的地</th>
+							<th scope="col">出発時間</th>
+							<th scope="col">到着時間</th>
+							<th scope="col">運転時間</th>
+							<th scope="col">私用料金</th>
+							<th scope="col">開始メーター</th>
+							<th scope="col">終了メーター</th>
+							<th scope="col">走行距離</th>
+							<th scope="col">編集/削除</th>
 						</tr>
 					</thead>
 					<tbody>
 						<div th:each="record : ${list}">
-						<tr>
-							<td>
+							<tr>
+								<td>
+									<div th:text="${record.date}" />
+								</td>
+								<td>
+									<div />
+								</td>
+								<td>
+									<div th:text="${record.driver}" />
+								</td>
+								<td>
+									<div th:text="${record.purpose}" />
+								</td>
+								<td>
+									<div th:text="${record.destination}" />
+								</td>
+								<td>
+									<div th:text="${record.time}" />
+								</td>
+								<td>
+									<div />
+								</td>
+								<td>
+									<div />
+								</td>
+								<td>
+									<div th:text="${record.privatefee}" />
+								</td>
+								<td>
+									<div th:text="${record.meter}" />
+								</td>
+								<td>
+									<div />
+								</td>
+								<td>
+									<div th:text="${record.car}" />
+								</td>
+								<td>
 
-								<h2 th:text="${record.date}" />
+									<div class="buttons clearfix">
+										<a th:href="@{'edit?id={id}'(id=${record.id})}" class="edit">編集</a><a
+											th:href="@{'delete?id={id}'(id=${record.id})}" class="delete">削除</a>
+									</div>
 
-							</td>
-
-							<td>
-
-								<h2 th:text="${record.time}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.car}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.driver}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.purpose}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.destination}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.meter}" />
-
-							</td>
-							<td>
-
-								<h2 th:text="${record.privatefee}" />
-
-							</td>
-							<td>
-
-								<div class="buttons clearfix">
-									<a th:href="@{'edit?id={id}'(id=${record.id})}" class="edit">編集</a><a
-										th:href="@{'delete?id={id}'(id=${record.id})}" class="delete">削除</a>
-								</div>
-
-							</td>
-						</tr>
+								</td>
+							</tr>
 						</div>
 					</tbody>
 				</table>
 			</div>
+
 		</article>
-
-
 	</section>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
