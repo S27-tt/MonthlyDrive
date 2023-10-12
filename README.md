@@ -4,8 +4,9 @@
 
 ＜情報登録画面＞
 <div align="left">
-<kbd><img width="194" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/d9271a02-8be8-40e0-9ca5-f760aefa9d1c"></kbd>
+<kbd><img width="194" height="500" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/d9271a02-8be8-40e0-9ca5-f760aefa9d1c"></kbd>
 </div>
+
 
 ＜運転日報画面＞
 <div align="left">
