@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/normalize.css"
+	th:href="@{/css/normalize.css}">
+<link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+<title>運転日報</title>
+</head>
+<body>
+	<div id="wrap">
+		<header th:replace="common.html :: header"></header>
+		<form method="POST" action="#" th:action="@{${path}}"
+			th:object="${form}">
+			<input type="hidden" th:field="*{id}" />
+			<section id="form">
+				<dl class="clearfix">
+					<dt hidden>
+						<label th:for="${#ids.next('date')}" class="required">日付</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{date}"></input>
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('time')}" class="required">出発時間</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{time}"></input>
+						</div>
+					</dd>
+					<dt>
+						<label th:for="${#ids.next('time_2')}" class="required">到着時間</label>
+					</dt>
+					<dd>
+						<div>
+							<input type="text" id="day3" value="day_2" th:field="*{time_2}"></input>
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('car')}" class="required">車名</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{car}" />
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('driver')}" class="required">運転者</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{driver}" />
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('purpose')}" class="required">用途</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{purpose}" />
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('destination')}" class="required">目的地</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{destination}" />
+						</div>
+					</dd>
+					<dt hidden>
+						<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
+					</dt>
+					<dd hidden>
+						<div>
+							<input type="text" th:field="*{meter}" />
+						</div>
+					</dd>
+					<dt>
+						<label th:for="${#ids.next('meter_2')}" class="required">終了メーター</label>
+					</dt>
+					<dd>
+						<div>
+							<input type="text" th:field="*{meter_2}" />
+						</div>
+					</dd>
+					<dt>
+						<label th:for="${#ids.next('privatefee')}" class="required">私用料金</label>
+					</dt>
+					<dd>
+						<div>
+							<input type="text" th:field="*{privatefee}" />
+						</div>
+					</dd>
+				</dl>
+				<button type="submit">送信</button>
+			</section>
+		</form>
+		<footer th:replace="common.html :: footer"></footer>
+	</div>
+	<script src="/js/layout2.js"></script>
+</body>
+</html>

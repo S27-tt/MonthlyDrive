@@ -1,40 +1,71 @@
-<form method="POST" action="#" th:action="@{${path}}" th:object="${form}">
-  <input type="hidden" th:field="*{id}" />
-  <section id="form">
-    <dl class="clearfix">
-      <dt><label th:for="${#ids.next('date')}" class="required">日付</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{date}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('time')}" class="required">時間</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{time}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('car')}" class="required">車名</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{car}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('driver')}" class="required">運転者</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{driver}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('purpose')}" class="required">用途</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{purpose}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('destination')}" class="required">目的地</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{destination}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('meter')}" class="required">メーター</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{meter}" /></div>
-      </dd>
-      <dt><label th:for="${#ids.next('privatefee')}" class="required">私用料金</label></dt>
-      <dd>
-        <div><input type="text" th:field="*{privatefee}" /></div>
-      </dd>
-    </dl>
-    <button type="submit">送信</button>
-  </section>
+<form method="POST" action="#" th:action="@{${path}}"
+	th:object="${form}">
+	<input type="hidden" th:field="*{id}" />
+	<section id="form">
+		<dl class="clearfix">
+			<dt>
+				<label th:for="${#ids.next('date')}" class="required">日付</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" id="day" value="day_1" th:field="*{date}"></input>
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('time')}" class="required">出発時間</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" id="day2" value="day_2" th:field="*{time}"></input>
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('car')}" class="required">車名</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" th:field="*{car}" />
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('driver')}" class="required">運転者</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" th:field="*{driver}" />
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('purpose')}" class="required">用途</label>
+			</dt>
+			<dd>
+				<div>
+					<select th:field="*{purpose}" />
+					<option selected>下記よりご選択ください</option>
+					<option>営業活動</option>
+					<option>通勤</option>
+					<option>その他</option>
+					<option>私用</option>
+					</select>
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('destination')}" class="required">目的地</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" th:field="*{destination}" />
+				</div>
+			</dd>
+			<dt>
+				<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
+			</dt>
+			<dd>
+				<div>
+					<input type="text" th:field="*{meter}" />
+				</div>
+			</dd>
+		</dl>
+		<button type="submit">送信</button>
+	</section>
 </form>

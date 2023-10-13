@@ -52,7 +52,7 @@ public class DriveController {
         model.addAttribute("form", record);
         model = setList(model);
         model.addAttribute("path", "update");
-        return "layout";
+        return "arrive";
     }
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)

@@ -1,5 +1,7 @@
 package com.example.monthlydrive.repository;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,36 +22,52 @@ public class Record {
 	private String id = null;
 
 	/** 日付 */
-	@Column(length = 20, nullable = false)
-	private Date date = null; 
+	@Column(length = 20)
+	private String date = null; 
 	
 	/** 時間 */
-	@Column(length = 20, nullable = false)
-	private String time = null;
+	@Column(length = 20)
+	private LocalTime time = LocalTime.now();
+	
+	@Column(length = 20)
+	private LocalTime time_2 = LocalTime.now();
+	
+	@Column(length = 20)
+	private String time_3 = null;	
+	
+	@Column(length = 20)
+	private String time_4 = null;
 	
 	/** 車名 */
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String car = null;
 	
 	/** 運転者 */
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String driver = null;
 	
 	/** 用途 */
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String purpose = null;
 	
 	/** 目的地 */
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String destination = null;
 	
 	/** メーター */
-	@Column(length = 20, nullable = false)
-	private String meter = null;
+	@Column(length = 20)
+	private int meter;
+	
+	@Column(length = 20)
+	private int meter_2;
+	
+	@Column(length = 20)
+	private int meter_3;
+	
 	
 	/** 私用料金 */
-	@Column(length = 20, nullable = false)
-	private String privatefee = null;
+	@Column(length = 20)
+	private int privatefee;
 	
 	private Date createdDate = null;
 	
