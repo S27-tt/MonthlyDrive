@@ -7,6 +7,7 @@
 <kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/7ce4231f-9f6f-4d99-9af6-c199489ac39c">
 </kbd>
 </div>
+<br>
 ＜出発情報登録画面＞
 <div align="left">
 <kbd><img width="197" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/e02afa49-350c-4f91-bac2-55ba9141c584">
