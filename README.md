@@ -2,14 +2,21 @@
 会社で使用する社有車の運転日報を作成できるサイトとなります。
 日付、メーター等を情報入力画面から入力することで、運転日報が作成できます。
 
-＜情報登録画面＞
-<div align="left">
-<kbd><img width="194" height="350" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/d9271a02-8be8-40e0-9ca5-f760aefa9d1c"></kbd>
-</div>
-<br>
 ＜運転日報画面＞
 <div align="left">
-<kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/dca34121-b6aa-4f17-b772-41b9e2e4d23b"></kbd>
+<kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/7ce4231f-9f6f-4d99-9af6-c199489ac39c">
+</kbd>
+</div>
+＜出発情報登録画面＞
+<div align="left">
+<kbd><img width="197" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/e02afa49-350c-4f91-bac2-55ba9141c584">
+</kbd>
+</div>
+<br>
+＜到着情報登録画面＞
+<div align="left">
+<kbd><img width="196" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/2dbeffd1-75bf-452b-a674-e6198d1bb391">
+</kbd>
 </div>
 
 ## URL
