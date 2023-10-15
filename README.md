@@ -1,8 +1,8 @@
 ﻿# 運転日報アプリ「MonthlyDrive」
-会社で使用する社有車の運転日報を作成できるサイトとなります。
+会社で使用する社有車の運転日報を作成できるサイトとなります。  
 日付、メーター等を情報入力画面から入力することで、運転日報が作成できます。
 
-
+＜運転日報画面＞
 <div align="left">
 <kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/7ce4231f-9f6f-4d99-9af6-c199489ac39c">
 </kbd>
