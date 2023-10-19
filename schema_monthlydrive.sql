@@ -7,6 +7,8 @@ CREATE TABLE IF NOT EXISTS record (
     time_2 varchar(40) NULL, 
     time_3 varchar(40) NULL,
     time_4 varchar(40) NULL,
+    time_5 varchar(40) NULL,
+    time_6 varchar(40) NULL,
     car varchar(20) NULL,
     driver varchar(20) NULL,
     purpose varchar(20) NULL,

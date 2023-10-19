@@ -2,6 +2,7 @@ package com.example.monthlydrive.repository;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -27,16 +28,22 @@ public class Record {
 	
 	/** 時間 */
 	@Column(length = 20)
-	private LocalTime time = LocalTime.now();
+	private LocalDateTime time = LocalDateTime.now();
 	
 	@Column(length = 20)
-	private LocalTime time_2 = LocalTime.now();
+	private LocalDateTime time_2 = null;
 	
 	@Column(length = 20)
 	private String time_3 = null;	
 	
 	@Column(length = 20)
 	private String time_4 = null;
+	
+	@Column(length = 20)
+	private String time_5 = null;	
+	
+	@Column(length = 20)
+	private String time_6 = null;
 	
 	/** 車名 */
 	@Column(length = 20)
@@ -62,8 +69,7 @@ public class Record {
 	private int meter_2;
 	
 	@Column(length = 20)
-	private int meter_3;
-	
+	private int meter_3;	
 	
 	/** 私用料金 */
 	@Column(length = 20)

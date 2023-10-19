@@ -3,17 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="/css/normalize.css"
 	th:href="@{/css/normalize.css}">
 <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
-<title>運転日報</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>到着情報登録</title>
 </head>
-<body>
+<body class="bg-light">
 	<div id="wrap">
-		<header th:replace="common.html :: header"></header>
+		<header><h1>到着情報登録</h1></header>
 		<form method="POST" action="#" th:action="@{${path}}"
 			th:object="${form}">
 			<input type="hidden" th:field="*{id}" />
+			<div style="width: 180px; margin: auto;">
 			<section id="form">
 				<dl class="clearfix">
 					<dt hidden>
@@ -37,7 +44,7 @@
 					</dt>
 					<dd>
 						<div>
-							<input type="text" id="day3" value="day_2" th:field="*{time_2}"></input>
+							<input type="text" id="time2" th:field="*{time_2}" ></input>
 						</div>
 					</dd>
 					<dt hidden>
@@ -84,8 +91,9 @@
 						<label th:for="${#ids.next('meter_2')}" class="required">終了メーター</label>
 					</dt>
 					<dd>
-						<div>
-							<input type="text" th:field="*{meter_2}" />
+						<div><span style="white-space:nowrap;">
+							<input type="text" th:field="*{meter_2}" />km
+						</span>
 						</div>
 					</dd>
 					<dt>
@@ -97,11 +105,19 @@
 						</div>
 					</dd>
 				</dl>
-				<button type="submit">送信</button>
+				<button type="submit" class="btn btn-primary">登録</button>
 			</section>
+			</div>
 		</form>
 		<footer th:replace="common.html :: footer"></footer>
 	</div>
-	<script src="/js/layout2.js"></script>
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<script th:src="@{/js/arrive.js}"></script>
 </body>
 </html>
