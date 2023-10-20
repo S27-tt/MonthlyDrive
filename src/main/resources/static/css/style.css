@@ -6,3 +6,7 @@ h1,footer{
 	text-align: center;
 }
 
+* {
+	float: none;
+	position: static;
+}

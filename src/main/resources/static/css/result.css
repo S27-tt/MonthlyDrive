@@ -1,12 +1,10 @@
-.title { text-align: center; }
+.title {
+	text-align: center;
+}
 
 p {
 	font-weight: bold;
 	font-size: 25px;
-}
-
-.info {
-	height: 30px;
 }
 
 .info-1 table {
@@ -28,14 +26,26 @@ caption {
 	text-align: right;
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
 
-@media screen and (max-width:915px) {
-	.title { text-align: center; }
-	
-	.info-1 {
-		width: 60%;
+th, td {
+	padding: 10px;
+}
+
+@media screen and (max-width:480px) {
+	table {
+		min-width: 500px;
 	}
-	.info-2 {
-		width: 60%;
+	.table_wrap {
+		width: 100%;
+		overflow-x: scroll;
 	}
+}
+
+* {
+	float: none;
+	position: static;
 }
