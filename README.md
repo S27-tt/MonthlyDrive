@@ -10,14 +10,14 @@
 <br>
 ＜出発情報登録画面＞
 <div align="left">
-<kbd><img width="197" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/a461db02-b893-4821-8b87-27fa762603f2">
+<kbd><img width="197" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/28dfd785-512a-44af-aed2-6e51f9e2063d">
 </kbd>
 
 </div>
 <br>
 ＜到着情報登録画面＞
 <div align="left">
-<kbd><img width="196" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/055e6a48-fb74-42bd-9e38-3079c9922543">
+<kbd><img width="196" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/10f6c745-bee6-4425-bb72-314c22759bb8">
 </kbd>
 
 </div>
