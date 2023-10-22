@@ -1,5 +1,5 @@
-var time2 = document.getElementById('time2');
-var fp = flatpickr(time2, {
+var calendar = document.getElementById('endTime');
+var fp = flatpickr(calendar, {
 	enableTime: true,
 	showMonthAfterYear: true,
 	locale: 'ja',

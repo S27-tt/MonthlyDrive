@@ -25,7 +25,7 @@ public class DriveController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 
-	public String index2(Model model) {
+	public String index(Model model) {
 		model.addAttribute("form", RecordFactory.newRecord());
 		model = this.setList(model);
 		model.addAttribute("path", "create");
@@ -33,7 +33,7 @@ public class DriveController {
 	}
 
 	@RequestMapping(value = "/start", method = RequestMethod.GET)
-	public String index(Model model) {
+	public String index2(Model model) {
 		model.addAttribute("form", RecordFactory.newRecord());
 		model = this.setList(model);
 		model.addAttribute("path", "create");
@@ -43,27 +43,27 @@ public class DriveController {
 	private Model setList(Model model) {
 		Iterable<Record> list = repository.findByDeletedFalseOrderByDateAsc();
 
-		Long time1 = 0L;
-		int sum2 = 0;
-		int sum3 = 0;
+		Long timeLag = 0L;
+		int sumPf = 0;
+		int sumMd = 0;
 
 		for (Record record : list) {
-			LocalDateTime time2 = record.getTime_2();
-			if (time2 != null) {
-				time1 += ChronoUnit.MINUTES.between(record.getTime(), time2);
-				sum2 += record.getPrivatefee();
-				sum3 += record.getMeter_3();
+			LocalDateTime endTime = record.getEndTime();
+			if (endTime != null) {
+				timeLag += ChronoUnit.MINUTES.between(record.getStartTime(), endTime);
+				sumPf += record.getPrivatefee();
+				sumMd += record.getMeterDiff();
 			}
 		}
 
-		Long hour = time1 / 60;
-		Long time3 = time1 % 60;
+		Long hour = timeLag / 60;
+		Long min = timeLag % 60;
 		String hourStr = String.format("%02d", hour);
-		String minStr = String.format("%02d", time3);
+		String minStr = String.format("%02d", min);
 		model.addAttribute("list", list);
-		model.addAttribute("sum1", hourStr + ":" + minStr);
-		model.addAttribute("sum2", sum2);
-		model.addAttribute("sum3", sum3);
+		model.addAttribute("sumTl", hourStr + ":" + minStr);
+		model.addAttribute("sumPf", sumPf);
+		model.addAttribute("sumMd", sumMd);
 
 		return model;
 	}
@@ -77,7 +77,7 @@ public class DriveController {
 			model.addAttribute("path", "create");
 			return "result";
 		}
-		
+
 		return "layout";
 	}
 
@@ -100,9 +100,7 @@ public class DriveController {
 			model.addAttribute("path", "create");
 			return "result";
 		}
-		
-	
-		
+
 		return "arrive";
 	}
 

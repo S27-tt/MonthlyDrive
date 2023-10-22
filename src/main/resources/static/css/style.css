@@ -1,12 +1,16 @@
-select{
+select {
 	height: 25px;
 }
 
-h1,footer{
+h1, footer {
 	text-align: center;
 }
 
 * {
 	float: none;
 	position: static;
+}
+
+span.startMeter, span.endMeter, span.privatefee {
+	color: red;
 }

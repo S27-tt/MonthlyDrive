@@ -1,9 +1,5 @@
 <form method="POST" action="#" th:action="@{${path}}"
 	th:object="${form}">
-	<ul class="errs">
-		<li th:each="error : ${#fields.detailedErrors()}"
-			th:text="${error.message}" class="err" />
-	</ul>
 	<input type="hidden" th:field="*{id}" />
 	<div style="width: 180px; margin: auto;">
 		<section id="form">
@@ -20,11 +16,12 @@
 					</dd>
 				</div>
 				<dt>
-					<label th:for="${#ids.next('time')}" class="required">出発時間</label>
+					<label th:for="${#ids.next('startTime')}" class="required">出発時間</label>
 				</dt>
 				<dd>
 					<div>
-						<input type="text" required="required" id="time" th:field="*{time}"></input> 
+						<input type="text" required="required" id="startTime"
+							th:field="*{startTime}"></input>
 					</div>
 				</dd>
 				<div hidden>
@@ -65,18 +62,22 @@
 				</dt>
 				<dd>
 					<div>
-						<input type="text" required="required" th:field="*{destination}" /> 
+						<input type="text" required="required" th:field="*{destination}" />
 					</div>
 				</dd>
 				<dt>
-					<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
+					<label th:for="${#ids.next('startMeter')}" class="required">開始メーター</label>
 				</dt>
 				<dd>
 					<div>
-						<span style="white-space: nowrap;"> <input type="text" required="required"
-							th:field="*{meter}" />km
-						</span> <span th:if="${#fields.hasErrors('meter')}" th:errors="*{meter}"
-							th:errorclass="err" />
+						<span style="white-space: nowrap;"> <input type="text"
+							required="required" th:field="*{startMeter}" />km
+						</span>
+						<p>
+							<span class="startMeter"
+								th:if="${#fields.hasErrors('startMeter')}"
+								th:errors="*{startMeter}" th:errorclass="err" />
+						</p>
 					</div>
 				</dd>
 			</dl>

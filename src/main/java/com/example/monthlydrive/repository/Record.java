@@ -22,61 +22,66 @@ public class Record {
 
 	/** 日付 */
 	@Column(length = 20)
-	private String date = null; 
-	
-	/** 時間 */
+	private String date = null;
+
+	/** 出発時間 */
 	@Column(length = 20)
-	private LocalDateTime time = LocalDateTime.now();
-	
+	private LocalDateTime startTime = LocalDateTime.now();
+
+	/** 到着時間 */
 	@Column(length = 20)
-	private LocalDateTime time_2 = null;
-	
+	private LocalDateTime endTime = null;
+
+	/** 出発時間修正 */
 	@Column(length = 20)
-	private String time_3 = null;	
-	
+	private String correctSt = null;
+
+	/** 到着時時間修正 */
 	@Column(length = 20)
-	private String time_4 = null;
-	
+	private String correctEt = null;
+
+	/** 時間差分 */
 	@Column(length = 20)
-	private String time_5 = null;	
-	
-	@Column(length = 20)
-	private String time_6 = null;
-	
+	private String timeLag = null;
+
 	/** 車名 */
 	@Column(length = 20)
 	private String car = null;
-	
+
 	/** 運転者 */
 	@Column(length = 20)
 	private String driver = null;
-	
+
 	/** 用途 */
 	@Column(length = 20)
 	private String purpose = null;
-	
-	/** 目的地 */
+
+	/** 目的・行く先 */
 	@Column(length = 20)
 	private String destination = null;
-	
-	/** メーター */
+
+	/** 出発メーター */
 	@Column(length = 20)
-	private int meter;
-	
+	private int startMeter;
+
+	/** 到着メーター */
 	@Column(length = 20)
-	private int meter_2;
-	
+	private int endMeter;
+
+	/** メーター差分 */
 	@Column(length = 20)
-	private int meter_3;	
-	
+	private int meterDiff;
+
 	/** 私用料金 */
 	@Column(length = 20)
 	private int privatefee;
-	
+
+	/** 作成日時 */
 	private Date createdDate = null;
-	
+
+	/** 更新日時 */
 	private Date updatedDate = null;
-	
+
 	private boolean deleted = false;
-	
+
 }

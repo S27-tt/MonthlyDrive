@@ -24,20 +24,15 @@
 						<tr>
 							<th>車名</th>
 							<td>マンスリードライブ</td>
-
 						</tr>
-
 						<tr>
 							<th>管理部署</th>
 							<td>営業部</td>
-
 						</tr>
-
 						<tr>
 							<th>区分</th>
 							<td>新車</td>
 						</tr>
-
 					</table>
 				</td>
 				<td valign="top">
@@ -45,16 +40,11 @@
 						<tr>
 							<th>車両番号</th>
 							<td>1234</td>
-
 						</tr>
-
 						<tr>
 							<th>氏名</th>
 							<td>運転 太郎</td>
-
 						</tr>
-
-
 					</table>
 				</td>
 			</tr>
@@ -72,7 +62,7 @@
 			<div class="info-2 ms-3 me-3">
 				<table
 					class="table table-bordered text-nowrap table-striped table-sm"
-					id="table_01">
+					id="tableDleate">
 					<caption>
 						<a th:href="@{/start}">出発登録</a>
 					</caption>
@@ -90,8 +80,6 @@
 							<th scope="col">終了メーター</th>
 							<th scope="col">走行距離</th>
 							<th scope="col">到着/削除</th>
-
-
 						</tr>
 					</thead>
 					<tbody>
@@ -111,44 +99,38 @@
 									<div th:text="${record.destination}" />
 								</td>
 								<td hidden>
-									<div th:text="${record.time}" />
+									<div th:text="${record.startTime}" />
 								</td>
 								<td hidden>
-									<div th:text="${record.time_2}" />
+									<div th:text="${record.endTime}" />
 								</td>
 								<td>
-									<div th:text="${record.time_3}" />
+									<div th:text="${record.correctSt}" />
 								</td>
 								<td>
-									<div th:text="${record.time_4}" />
+									<div th:text="${record.correctEt}" />
 								</td>
 								<td>
-									<div th:text="${record.time_5}" />
-								</td>
-								<td hidden>
-									<div th:text="${record.time_6}" />
+									<div th:text="${record.timeLag}" />
 								</td>
 								<td>
 									<div th:text="${record.privatefee}" />
 								</td>
 								<td>
-									<div th:text="${record.meter}" />
+									<div th:text="${record.startMeter}" />
 								</td>
 								<td>
-									<div th:text="${record.meter_2}" />
+									<div th:text="${record.endMeter}" />
 								</td>
 								<td>
-									<div th:text="${record.meter_3}" style="display: inline;" />km
+									<div th:text="${record.meterDiff}" style="display: inline;" />km
 								</td>
 								<td>
-
 									<div class="buttons clearfix">
 										<a th:href="@{'edit?id={id}'(id=${record.id})}" class="edit">到着</a>/<a
 											th:href="@{'delete?id={id}'(id=${record.id})}" class="delete">削除</a>
 									</div>
 								</td>
-
-
 							</tr>
 						</div>
 						<div>
@@ -173,11 +155,11 @@
 									<div></div>
 								</td>
 								<td>
-									<div th:text="${sum1}" />
+									<div th:text="${sumTl}" />
 								</td>
 
 								<td>
-									<div th:text="${sum2}" />
+									<div th:text="${sumPf}" />
 								</td>
 								<td>
 									<div></div>
@@ -186,10 +168,9 @@
 									<div></div>
 								</td>
 								<td>
-									<div th:text="${sum3}" style="display: inline;" />km
+									<div th:text="${sumMd}" style="display: inline;" />km
 								</td>
 								<td>
-
 									<div></div>
 								</td>
 							</tr>

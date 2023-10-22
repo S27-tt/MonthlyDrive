@@ -12,7 +12,5 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
 
 	public Optional<Record> findById(String id);
 
-	
-	
 	List<Record> findByDeletedFalseOrderByDateAsc();
 }
