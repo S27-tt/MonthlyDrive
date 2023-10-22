@@ -1,81 +1,87 @@
 <form method="POST" action="#" th:action="@{${path}}"
 	th:object="${form}">
+	<ul class="errs">
+		<li th:each="error : ${#fields.detailedErrors()}"
+			th:text="${error.message}" class="err" />
+	</ul>
 	<input type="hidden" th:field="*{id}" />
 	<div style="width: 180px; margin: auto;">
-	<section id="form">
-	
-		<dl class="clearfix">			
-			<div hidden>
-			<dt>
-				<label th:for="${#ids.next('date')}" class="required">日付</label>
-			</dt>
-			<dd>
-				<div>
-					<input type="text" id="date" th:field="*{date}" ></input> 
+		<section id="form">
+
+			<dl class="clearfix">
+				<div hidden>
+					<dt>
+						<label th:for="${#ids.next('date')}" class="required">日付</label>
+					</dt>
+					<dd>
+						<div>
+							<input type="text" id="date" th:field="*{date}"></input>
+						</div>
+					</dd>
 				</div>
-			</dd>
-			</div>
-			<dt>
-				<label th:for="${#ids.next('time')}" class="required">出発時間</label>
-			</dt>
-			<dd>
-				<div>
-					<input type="text" id="time" th:field="*{time}"></input>
+				<dt>
+					<label th:for="${#ids.next('time')}" class="required">出発時間</label>
+				</dt>
+				<dd>
+					<div>
+						<input type="text" required="required" id="time" th:field="*{time}"></input> 
+					</div>
+				</dd>
+				<div hidden>
+					<dt>
+						<label th:for="${#ids.next('car')}" class="required">車名</label>
+					</dt>
+					<dd>
+						<div>
+							<input type="text" th:field="*{car}" />
+						</div>
+					</dd>
 				</div>
-			</dd>
-			<div hidden>
-			<dt>
-				<label th:for="${#ids.next('car')}" class="required">車名</label>
-			</dt>
-			<dd>
-				<div>
-					<input type="text" th:field="*{car}" />
-				</div>
-			</dd>
-			</div>
-			<dt>
-				<label th:for="${#ids.next('driver')}" class="required">運転者</label>
-			</dt>
-			<dd>
-				<div>
-					<input type="text" th:field="*{driver}" />
-				</div>
-			</dd>
-			<dt>
-				<label th:for="${#ids.next('purpose')}" class="required">用途</label>
-			</dt>
-			<dd>
-				<div>
-					<select th:field="*{purpose}" />
-					<option selected>下記よりご選択ください</option>
-					<option>営業活動</option>
-					<option>通勤</option>
-					<option>その他</option>
-					<option>私用</option>
-					</select>
-					
-				</div>
-			</dd>
-			<dt>
-				<label th:for="${#ids.next('destination')}" class="required">目的・行く先</label>
-			</dt>
-			<dd>
-				<div>
-					<input type="text" th:field="*{destination}" />
-				</div>
-			</dd>
-			<dt>
-				<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
-			</dt>
-			<dd>
-				<div><span style="white-space:nowrap;">
-					<input type="text" th:field="*{meter}" />km
-				</span>
-				</div>
-			</dd>
-		</dl>
-		<button type="submit" class="btn btn-primary">登録</button>
-	
-	</section>
+				<dt>
+					<label th:for="${#ids.next('driver')}" class="required">運転者</label>
+				</dt>
+				<dd>
+					<div>
+						<input type="text" required="required" th:field="*{driver}" />
+					</div>
+				</dd>
+				<dt>
+					<label th:for="${#ids.next('purpose')}" class="required">用途</label>
+				</dt>
+				<dd>
+					<div>
+						<select th:field="*{purpose}" />
+						<option selected>下記よりご選択ください</option>
+						<option>営業活動</option>
+						<option>通勤</option>
+						<option>その他</option>
+						<option>私用</option>
+						</select>
+
+					</div>
+				</dd>
+				<dt>
+					<label th:for="${#ids.next('destination')}" class="required">目的・行く先</label>
+				</dt>
+				<dd>
+					<div>
+						<input type="text" required="required" th:field="*{destination}" /> 
+					</div>
+				</dd>
+				<dt>
+					<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
+				</dt>
+				<dd>
+					<div>
+						<span style="white-space: nowrap;"> <input type="text" required="required"
+							th:field="*{meter}" />km
+						</span> <span th:if="${#fields.hasErrors('meter')}" th:errors="*{meter}"
+							th:errorclass="err" />
+					</div>
+				</dd>
+			</dl>
+			<button type="submit" class="btn btn-primary">登録</button>
+
+		</section>
 	</div>
 </form>

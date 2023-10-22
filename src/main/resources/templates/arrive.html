@@ -8,105 +8,115 @@
 	rel="stylesheet"
 	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/normalize.css"
-	th:href="@{/css/normalize.css}">
 <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>到着情報登録</title>
 </head>
 <body class="bg-light">
 	<div id="wrap">
-		<header><h1>到着情報登録</h1></header>
+		<header>
+			<h1>到着情報登録</h1>
+		</header>
 		<form method="POST" action="#" th:action="@{${path}}"
 			th:object="${form}">
+			<ul class="errs">
+				<li th:each="error : ${#fields.detailedErrors()}"
+					th:text="${error.message}" class="err" />
+			</ul>
 			<input type="hidden" th:field="*{id}" />
 			<div style="width: 180px; margin: auto;">
-			<section id="form">
-				<dl class="clearfix">
-					<dt hidden>
-						<label th:for="${#ids.next('date')}" class="required">日付</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{date}"></input>
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('time')}" class="required">出発時間</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{time}"></input>
-						</div>
-					</dd>
-					<dt>
-						<label th:for="${#ids.next('time_2')}" class="required">到着時間</label>
-					</dt>
-					<dd>
-						<div>
-							<input type="text" id="time2" th:field="*{time_2}" ></input>
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('car')}" class="required">車名</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{car}" />
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('driver')}" class="required">運転者</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{driver}" />
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('purpose')}" class="required">用途</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{purpose}" />
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('destination')}" class="required">目的地</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{destination}" />
-						</div>
-					</dd>
-					<dt hidden>
-						<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
-					</dt>
-					<dd hidden>
-						<div>
-							<input type="text" th:field="*{meter}" />
-						</div>
-					</dd>
-					<dt>
-						<label th:for="${#ids.next('meter_2')}" class="required">終了メーター</label>
-					</dt>
-					<dd>
-						<div><span style="white-space:nowrap;">
-							<input type="text" th:field="*{meter_2}" />km
-						</span>
-						</div>
-					</dd>
-					<dt>
-						<label th:for="${#ids.next('privatefee')}" class="required">私用料金</label>
-					</dt>
-					<dd>
-						<div>
-							<input type="text" th:field="*{privatefee}" />
-						</div>
-					</dd>
-				</dl>
-				<button type="submit" class="btn btn-primary">登録</button>
-			</section>
+				<section id="form">
+					<dl class="clearfix">
+						<dt hidden>
+							<label th:for="${#ids.next('date')}" class="required">日付</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{date}"></input>
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('time')}" class="required">出発時間</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{time}"></input>
+							</div>
+						</dd>
+						<dt>
+							<label th:for="${#ids.next('time_2')}" class="required">到着時間</label>
+						</dt>
+						<dd>
+							<div>
+								<input type="text" required="required" id="time2"
+									th:field="*{time_2}" />
+
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('car')}" class="required">車名</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{car}" />
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('driver')}" class="required">運転者</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{driver}" />
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('purpose')}" class="required">用途</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{purpose}" />
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('destination')}" class="required">目的地</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{destination}" />
+							</div>
+						</dd>
+						<dt hidden>
+							<label th:for="${#ids.next('meter')}" class="required">開始メーター</label>
+						</dt>
+						<dd hidden>
+							<div>
+								<input type="text" th:field="*{meter}" />
+							</div>
+						</dd>
+						<dt>
+							<label th:for="${#ids.next('meter_2')}" class="required">終了メーター</label>
+						</dt>
+						<dd>
+							<div>
+								<span style="white-space: nowrap;"> <input type="text"
+									required="required" th:field="*{meter_2}" />km
+								</span><span th:if="${#fields.hasErrors('meter_2')}"
+									th:errors="*{meter_2}" th:errorclass="err" />
+							</div>
+						</dd>
+						<dt>
+							<label th:for="${#ids.next('privatefee')}" class="required">私用料金</label>
+						</dt>
+						<dd>
+							<div>
+								<input type="text" required="required" th:field="*{privatefee}" /><span
+									th:if="${#fields.hasErrors('privatefee')}"
+									th:errors="*{privatefee}" th:errorclass="err" />
+							</div>
+						</dd>
+					</dl>
+					<button type="submit" class="btn btn-primary">登録</button>
+				</section>
 			</div>
 		</form>
 		<footer th:replace="common.html :: footer"></footer>
@@ -114,6 +124,7 @@
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

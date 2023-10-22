@@ -60,6 +60,10 @@
 			</tr>
 		</table>
 	</div>
+	<ul class="errs">
+		<li th:each="error : ${#fields.detailedErrors()}"
+			th:text="${error.message}" class="err" />
+	</ul>
 	<section id="records">
 
 
