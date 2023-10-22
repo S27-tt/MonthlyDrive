@@ -4,7 +4,7 @@
 
 ＜運転日報画面＞
 <div align="left">
-<kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/7ce4231f-9f6f-4d99-9af6-c199489ac39c">
+<kbd><img width="600" alt="image" src="https://github.com/S27-tt/MonthlyDrive/assets/131981423/3589d9c2-b99e-4cf3-8cc1-56a9d06ab225">
 </kbd>
 </div>
 <br>
